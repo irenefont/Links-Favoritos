@@ -1,0 +1,57 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/links/edit/{{link.id}}" method="POST">
+                        <div class="mb-3">
+                            <label for="title" class="form-label">Título</label>
+                            <input
+                                type="text"
+                                value = "{{link.title}}"
+                                class="form-control"
+                                id="title"
+                                name="title"
+                                autofocus
+                                aria-describedby="titleHelp"
+                                required
+                            />
+                            <div id="titleHelp" class="form-text">Aquí debes de
+                                poner el nuevo nombre.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="url" class="form-label">URL</label>
+                            <input
+                                type="url"
+                                value = "{{link.url}}"
+                                class="form-control"
+                                id="url"
+                                name="url"
+                                aria-describedby="urlHelp"
+                                required
+                            />
+
+                            <div id="urlHelp" class="form-text">Aquí debes de
+                                poner la nueva dirección de la página web.
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <div class="input-group">
+                                <textarea
+                                    class="form-control"
+                                    name = "description"
+                                    rows = "2"
+                                >{{link.description}}</textarea>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
