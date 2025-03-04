@@ -5,11 +5,13 @@ const path = require('path');
 const flash = require('connect-flash');
 const session = require('express-session');
 const MySQLStore = require('express-mysql-session')(session);
+const passport = require('passport');
 
 const { database } = require('./keys');
 
 // Inicializamos express
 const app = express();
+require('./lib/passport');
 
 // Configuraciones
 app.set('port', process.env.PORT || 4000);
@@ -35,6 +37,8 @@ app.use(flash()); // Para enviar mensajes entre vistas
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended: false})); // Para que el servidor entienda los datos que vienen de los formularios, pero simples, no imágenes ni archivos
 app.use(express.json()); // Para que el servidor entienda JSON
+app.use(passport.initialize());
+app.use(passport.session()); // Para que passport pueda guardar los datos del usuario en la sesión
 
 // Variables globales
 app.use((req, res, next) => {
