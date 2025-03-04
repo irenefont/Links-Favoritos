@@ -6,7 +6,7 @@ body {
 }
 
 h1{
-    font-size: 4rem;
+    font-size: 400%;
     color: #fff;
     margin: 0;
     padding: 0;
@@ -21,7 +21,7 @@ h1{
     color: #fff;
     min-height: 100vh;
     width: 100%;
-    padding-top: 8rem;
+    padding-top: 2vh;
     background: url(../img/fondo.jpeg) center center no-repeat;
     background-size: cover;
     display: flex;
@@ -29,3 +29,7 @@ h1{
     justify-content: center;
 }
 
+.logo-small {
+    width: 15%;
+    max-width: 250px;
+}
