@@ -43,6 +43,8 @@ app.use(passport.session()); // Para que passport pueda guardar los datos del us
 // Variables globales
 app.use((req, res, next) => {
     app.locals.success = req.flash('success'); // Variable global para mensajes de éxito
+    app.locals.message = req.flash('message'); // Variable global para mensajes de error
+    app.locals.user = req.user; // Variable global para el usuario autenticado
     next();
 });
 

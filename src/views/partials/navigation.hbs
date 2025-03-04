@@ -14,6 +14,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mb-2 mb-lg-2 ms-auto">
+                {{#if user}}
                 <li class="nav-item dropdown">
                     <a
                         class="nav-link dropdown-toggle"
@@ -29,19 +30,22 @@
                         <li><hr class="dropdown-divider" /></li>
                         <li><a class="dropdown-item" href="/links/add">Añadir un link</a></li>
                     </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/profile">Mi perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Cerrar sesión</a>
+                    </li>
+                </li>
+                {{else}}
+                <li class="nav-item">
+                    <a class="nav-link" href="/signin">Iniciar sesión</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/signup">Registrarse</a>
+                </li>
+                {{/if}}
             </ul>
-            <form class="d-flex" role="search">
-                <input
-                    class="form-control me-2"
-                    type="search"
-                    placeholder="Buscar enlaces..."
-                    aria-label="Buscar"
-                />
-                <button
-                    class="btn btn-outline-primary"
-                    type="submit"
-                >Buscar</button>
-            </form>
         </div>
     </div>
 </nav>
